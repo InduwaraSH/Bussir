@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
             ],
           ),
         ),
-        body: controller.screens[controller.selectedIndex.value],
+        body: Obx(()=> controller.screens[controller.selectedIndex.value]),
       ),
     );
   }
