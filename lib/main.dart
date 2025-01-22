@@ -1,5 +1,6 @@
+import 'package:bussir/home.dart';
+import 'package:bussir/route.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 import 'package:get/instance_manager.dart';
 import 'package:get/state_manager.dart';
 import 'package:iconsax/iconsax.dart';
@@ -45,8 +46,8 @@ class MyApp extends StatelessWidget {
 class navig_controll extends GetxController {
   final Rx<int> selectedIndex = 0.obs;
   final screens = [
-    Container(color: Colors.amber),
-    Container(color: Colors.green),
+    home(),
+    route(),
     Container(color: Colors.blue),
     Container(color: Colors.pink)
   ];
