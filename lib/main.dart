@@ -1,4 +1,5 @@
 import 'package:bussir/home.dart';
+import 'package:bussir/route.dart';
 import 'package:flutter/material.dart';
 import 'package:get/instance_manager.dart';
 import 'package:get/state_manager.dart';
@@ -46,7 +47,7 @@ class navig_controll extends GetxController {
   final Rx<int> selectedIndex = 0.obs;
   final screens = [
     home(),
-    Container(color: Colors.green),
+    route(),
     Container(color: Colors.blue),
     Container(color: Colors.pink)
   ];
