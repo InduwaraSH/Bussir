@@ -25,13 +25,11 @@ class MyApp extends StatelessWidget {
           () => NavigationBar(
             height: 80,
             indicatorColor: const Color.fromARGB(195, 255, 193, 7),
-            
             elevation: 0,
             selectedIndex: controller.selectedIndex.value,
             onDestinationSelected: (index) =>
                 controller.selectedIndex.value = index,
             destinations: [
-              
               NavigationDestination(icon: Icon(Iconsax.home), label: 'Home'),
               NavigationDestination(
                   icon: Icon(Iconsax.direct_up), label: 'Route'),
@@ -50,5 +48,5 @@ class MyApp extends StatelessWidget {
 
 class navig_controll extends GetxController {
   final Rx<int> selectedIndex = 0.obs;
-  final screens = [home(), route(), tickets(), alerts()];
+  final screens = [route(), home_route(), tickets(), alerts()];
 }

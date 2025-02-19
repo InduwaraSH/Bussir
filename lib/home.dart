@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-class home extends StatelessWidget {
-  const home({super.key});
+class home_route extends StatelessWidget {
+  const home_route({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +12,7 @@ class home extends StatelessWidget {
         child: Column(
           children: [
             const Text(
-              "MedCare",
+              "Maps",
               style: TextStyle(
                   fontFamily: 'sfpro',
                   fontSize: 35,
