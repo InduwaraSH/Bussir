@@ -43,19 +43,19 @@ class _SegmentedControlExampleState extends State<SegmentedControlExample> {
           children: const <Sky, Widget>{
             Sky.midnight: Padding(
               padding: EdgeInsets.symmetric(horizontal: 20),
-              child: Text('Midnight',
+              child: Text('Ongoing',
                   style: TextStyle(color: CupertinoColors.black)),
             ),
             Sky.viridian: Padding(
               padding: EdgeInsets.symmetric(horizontal: 20),
-              child: Text('Viridian',
+              child: Text('Closed',
                   style: TextStyle(color: CupertinoColors.black)),
             ),
-            Sky.cerulean: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              child: Text('Cerulean',
-                  style: TextStyle(color: CupertinoColors.black)),
-            ),
+            // Sky.cerulean: Padding(
+            //   padding: EdgeInsets.symmetric(horizontal: 20),
+            //   child: Text('Cerulean',
+            //       style: TextStyle(color: CupertinoColors.black)),
+            // ),
           },
         ),
       ),
