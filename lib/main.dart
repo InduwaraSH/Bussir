@@ -1,6 +1,7 @@
+import 'package:bussir/alerts.dart';
 import 'package:bussir/home.dart';
 import 'package:bussir/route.dart';
-
+import 'package:bussir/tickets.dart';
 import 'package:flutter/material.dart';
 import 'package:get/instance_manager.dart';
 import 'package:get/state_manager.dart';
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
         bottomNavigationBar: Obx(
           () => NavigationBar(
             height: 80,
+            indicatorColor: const Color.fromARGB(195, 255, 193, 7),
             elevation: 0,
             selectedIndex: controller.selectedIndex.value,
             onDestinationSelected: (index) =>
@@ -38,7 +40,7 @@ class MyApp extends StatelessWidget {
             ],
           ),
         ),
-        body: Obx(()=> controller.screens[controller.selectedIndex.value]),
+        body: Obx(() => controller.screens[controller.selectedIndex.value]),
       ),
     );
   }
@@ -46,10 +48,5 @@ class MyApp extends StatelessWidget {
 
 class navig_controll extends GetxController {
   final Rx<int> selectedIndex = 0.obs;
-  final screens = [
-    home(),
-    route(),
-    tickets(),
-    
-  ];
+  final screens = [route(), home_route(), tickets(), alerts()];
 }
