@@ -1,5 +1,9 @@
+import 'package:bussir/closedtkt.dart';
+import 'package:bussir/ongoingscreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+// Import OngoingScreen
+// Import LosedScreen
 
 class tickets extends StatelessWidget {
   const tickets({super.key});
@@ -27,11 +31,10 @@ class _SegmentedControlExampleState extends State<SegmentedControlExample> {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
-      backgroundColor: skyColors[_selectedSegment],
       navigationBar: CupertinoNavigationBar(
         middle: CupertinoSlidingSegmentedControl<Sky>(
           backgroundColor: const Color.fromARGB(255, 187, 187, 190),
-          thumbColor: skyColors[_selectedSegment]!,
+          thumbColor: Colors.white,
           groupValue: _selectedSegment,
           onValueChanged: (Sky? value) {
             if (value != null) {
@@ -51,30 +54,30 @@ class _SegmentedControlExampleState extends State<SegmentedControlExample> {
               child: Text('Closed',
                   style: TextStyle(color: CupertinoColors.black)),
             ),
-            // Sky.cerulean: Padding(
-            //   padding: EdgeInsets.symmetric(horizontal: 20),
-            //   child: Text('Cerulean',
-            //       style: TextStyle(color: CupertinoColors.black)),
-            // ),
           },
         ),
       ),
-      child: Center(
-        child: Text(
-          'Selected Segment: ${_selectedSegment.name}',
-          style: const TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
-        ),
-      ),
+      child: _getSelectedScreen(),
     );
+  }
+
+  Widget _getSelectedScreen() {
+    switch (_selectedSegment) {
+      case Sky.midnight:
+        return const Ongoingscreen();
+      case Sky.viridian:
+        return const Closedtkt();
+      default:
+        return const Center(child: Text('Select a segment'));
+    }
   }
 }
 
 // Define the Sky enum
-enum Sky { midnight, viridian, cerulean }
+enum Sky { midnight, viridian }
 
 // Define the skyColors map
 final Map<Sky, Color> skyColors = {
   Sky.midnight: Colors.white,
-  Sky.viridian: const Color.fromARGB(255, 255, 255, 255),
-  Sky.cerulean: const Color.fromARGB(255, 255, 255, 255),
+  Sky.viridian: Colors.white,
 };
