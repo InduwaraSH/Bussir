@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:webview_flutter/webview_flutter.dart';
+
 
 class home_route extends StatelessWidget {
   const home_route({super.key});
@@ -32,7 +32,7 @@ class home_route extends StatelessWidget {
                   color: Colors.black),
               child: Padding(
                 padding: const EdgeInsets.all(10.0),
-                child: WebViewScreen(),
+                
               ),
             )
           ],
@@ -42,49 +42,6 @@ class home_route extends StatelessWidget {
       // title: 'WebView App',
       // theme: ThemeData(primarySwatch: Colors.blue),
       // home: WebViewScreen(),
-    );
-  }
-}
-
-class WebViewScreen extends StatefulWidget {
-  const WebViewScreen({super.key});
-
-  @override
-  _WebViewScreenState createState() => _WebViewScreenState();
-}
-
-class _WebViewScreenState extends State<WebViewScreen> {
-  WebViewController? _controller; // Use nullable type
-
-  @override
-  void initState() {
-    super.initState();
-
-    // Initialize WebView
-    _initializeWebView();
-  }
-
-  Future<void> _initializeWebView() async {
-    final controller = WebViewController()
-      ..setJavaScriptMode(JavaScriptMode.unrestricted)
-      ..loadRequest(Uri.parse(
-          "https://my.atlist.com/map/ae914b3c-c193-4a54-800a-1780e970ec5f?share=true"));
-
-    setState(() {
-      _controller = controller;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: _controller == null
-            ? Center(
-                child:
-                    CircularProgressIndicator()) // Show loader while initializing
-            : WebViewWidget(controller: _controller!),
-      ),
     );
   }
 }
