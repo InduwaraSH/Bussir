@@ -1,14 +1,14 @@
 import 'package:elevated_ticket_widget/elevated_ticket_widget.dart';
 import 'package:flutter/material.dart';
 
-class Ongoingscreen extends StatefulWidget {
-  const Ongoingscreen({super.key});
+class Tktwidget extends StatefulWidget {
+  const Tktwidget({super.key});
 
   @override
-  State<Ongoingscreen> createState() => _ClosedtktState();
+  State<Tktwidget> createState() => _ClosedtktState();
 }
 
-class _ClosedtktState extends State<Ongoingscreen> {
+class _ClosedtktState extends State<Tktwidget> {
   // Sample Ticket Data List
   final List<Map<String, String>> tickets = [
     {
@@ -33,17 +33,6 @@ class _ClosedtktState extends State<Ongoingscreen> {
       "date": "15DEC",
       "ticketNo": "987-123456789",
     },
-    {
-      "busNo": "XYZ456",
-      "boardingTime": "2:45 PM",
-      "gate": "05-X",
-      "seat": "7",
-      "passengerName": "Kamal Perera",
-      "from": "Galle",
-      "to": "Kandy",
-      "date": "15DEC",
-      "ticketNo": "987-123456789",
-    },
   ];
 
   @override
@@ -51,21 +40,19 @@ class _ClosedtktState extends State<Ongoingscreen> {
     return SafeArea(
       child: Scaffold(
         body: ListView.builder(
-          padding: const EdgeInsets.only(left: 35, top: 0, bottom: 20),
+          padding: const EdgeInsets.all(16),
           itemCount: tickets.length,
           itemBuilder: (context, index) {
-            return SingleChildScrollView(
-              child: TicketWidget(
-                busNo: tickets[index]["busNo"]!,
-                boardingTime: tickets[index]["boardingTime"]!,
-                gate: tickets[index]["gate"]!,
-                seat: tickets[index]["seat"]!,
-                passengerName: tickets[index]["passengerName"]!,
-                from: tickets[index]["from"]!,
-                to: tickets[index]["to"]!,
-                date: tickets[index]["date"]!,
-                ticketNo: tickets[index]["ticketNo"]!,
-              ),
+            return TicketWidget(
+              busNo: tickets[index]["busNo"]!,
+              boardingTime: tickets[index]["boardingTime"]!,
+              gate: tickets[index]["gate"]!,
+              seat: tickets[index]["seat"]!,
+              passengerName: tickets[index]["passengerName"]!,
+              from: tickets[index]["from"]!,
+              to: tickets[index]["to"]!,
+              date: tickets[index]["date"]!,
+              ticketNo: tickets[index]["ticketNo"]!,
             );
           },
         ),
@@ -76,15 +63,7 @@ class _ClosedtktState extends State<Ongoingscreen> {
 
 // Reusable Ticket Widget
 class TicketWidget extends StatelessWidget {
-  final String busNo,
-      boardingTime,
-      gate,
-      seat,
-      passengerName,
-      from,
-      to,
-      date,
-      ticketNo;
+  final String busNo, boardingTime, gate, seat, passengerName, from, to, date, ticketNo;
 
   const TicketWidget({
     super.key,
@@ -104,8 +83,8 @@ class TicketWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: ElevatedTicketWidget(
-        height: 350,
-        width: 340,
+        height: 400,
+        width: 300,
         elevation: 1.5,
         backgroundColor: const Color.fromARGB(195, 255, 193, 7),
         child: Padding(
@@ -126,11 +105,8 @@ class TicketWidget extends StatelessWidget {
                     child: const Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Icon(Icons.emoji_transportation,
-                            color: Colors.white, size: 40),
-                        Text('SLTB',
-                            style:
-                                TextStyle(color: Colors.white, fontSize: 11)),
+                        Icon(Icons.emoji_transportation, color: Colors.white, size: 40),
+                        Text('SLTB', style: TextStyle(color: Colors.white, fontSize: 11)),
                       ],
                     ),
                   ),
@@ -150,7 +126,7 @@ class TicketWidget extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 16),
-
+              
               // Gate & Seat
               Row(
                 children: [
@@ -188,20 +164,8 @@ class TicketWidget extends StatelessWidget {
               // From - To
               Row(
                 children: [
-                  Expanded(
-                      child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                        Text('FROM', style: _boldStyle),
-                        Text(from, style: _boldStyle)
-                      ])),
-                  Expanded(
-                      child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                        Text('TO', style: _boldStyle),
-                        Text(to, style: _boldStyle)
-                      ])),
+                  Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [Text('FROM', style: _boldStyle), Text(from, style: _boldStyle)])),
+                  Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [Text('TO', style: _boldStyle), Text(to, style: _boldStyle)])),
                 ],
               ),
               const SizedBox(height: 16),
@@ -224,8 +188,6 @@ class TicketWidget extends StatelessWidget {
     );
   }
 
-  static const TextStyle _boldStyle =
-      TextStyle(fontSize: 12, fontWeight: FontWeight.w800);
-  static const TextStyle _italicStyle = TextStyle(
-      fontSize: 12, fontWeight: FontWeight.w800, fontStyle: FontStyle.italic);
+  static const TextStyle _boldStyle = TextStyle(fontSize: 12, fontWeight: FontWeight.w800);
+  static const TextStyle _italicStyle = TextStyle(fontSize: 12, fontWeight: FontWeight.w800, fontStyle: FontStyle.italic);
 }
