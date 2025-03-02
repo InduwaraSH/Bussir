@@ -11,13 +11,24 @@ class _homeState extends State<route> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Center(
+        body: SafeArea(
+      child: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.all(20),
           child: Column(
-            children: [Text("Abc2"), Text("ghgh2")],
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  IconButton(onPressed: () {}, icon: Icon(Icons.menu)),
+                  IconButton(onPressed: () {}, icon: Icon(Icons.person))
+                ],
+              )
+            ],
           ),
         ),
       ),
-    );
+    ));
   }
 }
