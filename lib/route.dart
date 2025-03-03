@@ -1,3 +1,4 @@
+import 'package:bussir/imageSlider.dart';
 import 'package:bussir/searchbar.dart';
 import 'package:flutter/material.dart';
 
@@ -29,7 +30,11 @@ class _homeState extends State<route> {
               SizedBox(
                 height: 25,
               ),
-              Searchbar()
+              Searchbar(),
+              SizedBox(
+                height: 25,
+              ),
+              imageslider()
             ],
           ),
         ),
