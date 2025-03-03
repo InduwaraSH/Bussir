@@ -1,3 +1,4 @@
+import 'package:bussir/searchbar.dart';
 import 'package:flutter/material.dart';
 
 class route extends StatefulWidget {
@@ -22,9 +23,13 @@ class _homeState extends State<route> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   IconButton(onPressed: () {}, icon: Icon(Icons.menu)),
-                  IconButton(onPressed: () {}, icon: Icon(Icons.person))
+                  IconButton(onPressed: () {}, icon: Icon(Icons.person)),
                 ],
-              )
+              ),
+              SizedBox(
+                height: 25,
+              ),
+              Searchbar()
             ],
           ),
         ),
