@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class imageslider extends StatelessWidget {
-  const imageslider({super.key});
+  final Function(int) onImageChanged;
+  final int currentImage;
+  const imageslider(
+      {super.key, required this.onImageChanged, required this.currentImage});
 
   @override
   Widget build(BuildContext context) {
@@ -15,6 +18,7 @@ class imageslider extends StatelessWidget {
             child: PageView(
               scrollDirection: Axis.horizontal,
               allowImplicitScrolling: true,
+              onPageChanged: onImageChanged,
               physics: ClampingScrollPhysics(),
               children: [
                 Image.asset(
@@ -32,7 +36,30 @@ class imageslider extends StatelessWidget {
               ],
             ),
           ),
-        )
+        ),
+        Positioned.fill(
+            bottom: 10,
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: List.generate(
+                    3,
+                    (index) => AnimatedContainer(
+                          duration: Duration(microseconds: 300),
+                          width: currentImage == index ? 15 : 8,
+                          height: 8,
+                          margin: EdgeInsets.only(right: 8),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: currentImage == index
+                                ? Colors.white
+                                : Colors.transparent,
+                            border: Border.all(color: Colors.white),
+                          ),
+                        )),
+              ),
+            ))
       ],
     );
   }
