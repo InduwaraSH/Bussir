@@ -10,6 +10,7 @@ class route extends StatefulWidget {
 }
 
 class _homeState extends State<route> {
+  int currentImage = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,13 +29,19 @@ class _homeState extends State<route> {
                 ],
               ),
               SizedBox(
-                height: 25,
+                height: 10,
               ),
               Searchbar(),
               SizedBox(
-                height: 25,
+                height: 20,
               ),
-              imageslider()
+              imageslider(
+                  onImageChanged: (value) {
+                    setState(() {
+                      currentImage = value;
+                    });
+                  },
+                  currentImage: currentImage)
             ],
           ),
         ),
