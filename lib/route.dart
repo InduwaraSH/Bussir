@@ -47,7 +47,7 @@ class _homeState extends State<route> {
               Row(
                 children: [
                   CupertinoButton(
-                      color: Colors.black,
+                      color: Colors.grey[200],
                       onPressed: () {},
                       child: Column(
                         children: [
@@ -58,6 +58,7 @@ class _homeState extends State<route> {
                           ),
                           SizedBox(
                             height: 10,
+                            width: 130,
                           ),
                           Text(
                             "Bus Time table",
@@ -69,19 +70,20 @@ class _homeState extends State<route> {
                           ),
                         ],
                       )),
-                  SizedBox(width: 40),
+                  SizedBox(width: 20),
                   CupertinoButton(
-                      color: Colors.black,
+                      color: Colors.grey[200],
                       onPressed: () {},
                       child: Column(
                         children: [
-                          Icon(
-                            Icons.shield_rounded,
-                            size: 30,
-                            color: Colors.black,
+                          Image(
+                            image: AssetImage("images/seatbooking.png"),
+                            height: 64,
+                            width: 130,
                           ),
                           SizedBox(
                             height: 10,
+                            width: 120,
                           ),
                           Text(
                             "Bus Booking",
@@ -96,25 +98,25 @@ class _homeState extends State<route> {
                 ],
               ),
               SizedBox(
-                height: 30,
+                height: 20,
               ),
               Row(
                 children: [
                   CupertinoButton(
-                      color: Colors.black,
+                      color: Colors.grey[200],
                       onPressed: () {},
                       child: Column(
                         children: [
-                          Icon(
-                            Icons.calendar_month,
-                            size: 30,
-                            color: Colors.black,
+                          Image(
+                            image: AssetImage("images/feedback.png"),
+                            height: 60,
+                            width: 130,
                           ),
                           SizedBox(
                             height: 10,
                           ),
                           Text(
-                            "Bus Time table",
+                            "Feedback",
                             style: TextStyle(
                                 color: Colors.black,
                                 fontFamily: 'sfpro',
@@ -123,24 +125,24 @@ class _homeState extends State<route> {
                           ),
                         ],
                       )),
-                  SizedBox(width: 40),
+                  SizedBox(width: 20),
                   CupertinoButton(
-                      color: Colors.black,
+                      color: Colors.grey[200],
                       onPressed: () {},
                       child: Column(
                         children: [
-                          Icon(
-                            Icons.calendar_month,
-                            size: 30,
-                            color: Colors.white54,
+                          Image(
+                            image: AssetImage("images/emergency.png"),
+                            height: 60,
+                            width: 130,
                           ),
                           SizedBox(
                             height: 10,
                           ),
                           Text(
-                            "Bus Time table",
+                            "Emergency",
                             style: TextStyle(
-                                color: Colors.white,
+                                color: Colors.black,
                                 fontFamily: 'sfpro',
                                 fontWeight: FontWeight.bold,
                                 fontSize: 18),
