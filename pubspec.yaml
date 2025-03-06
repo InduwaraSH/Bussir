@@ -72,6 +72,8 @@ flutter:
     - images/img_01.png
     - images/img_02.png
     - images/img_03.png
+    - images/bustimetable.png
+    - images/seatbooking.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

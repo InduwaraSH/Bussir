@@ -1,5 +1,6 @@
 import 'package:bussir/imageSlider.dart';
 import 'package:bussir/searchbar.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class route extends StatefulWidget {
@@ -41,7 +42,113 @@ class _homeState extends State<route> {
                       currentImage = value;
                     });
                   },
-                  currentImage: currentImage)
+                  currentImage: currentImage),
+              const SizedBox(height: 30),
+              Row(
+                children: [
+                  CupertinoButton(
+                      color: Colors.black,
+                      onPressed: () {},
+                      child: Column(
+                        children: [
+                          Image.asset(
+                            "images/bustimetable.png",
+                            height: 70,
+                            width: 120,
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text(
+                            "Bus Time table",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontFamily: 'sfpro',
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18),
+                          ),
+                        ],
+                      )),
+                  SizedBox(width: 40),
+                  CupertinoButton(
+                      color: Colors.black,
+                      onPressed: () {},
+                      child: Column(
+                        children: [
+                          Icon(
+                            Icons.shield_rounded,
+                            size: 30,
+                            color: Colors.black,
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text(
+                            "Bus Booking",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontFamily: 'sfpro',
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18),
+                          ),
+                        ],
+                      )),
+                ],
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Row(
+                children: [
+                  CupertinoButton(
+                      color: Colors.black,
+                      onPressed: () {},
+                      child: Column(
+                        children: [
+                          Icon(
+                            Icons.calendar_month,
+                            size: 30,
+                            color: Colors.black,
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text(
+                            "Bus Time table",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontFamily: 'sfpro',
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18),
+                          ),
+                        ],
+                      )),
+                  SizedBox(width: 40),
+                  CupertinoButton(
+                      color: Colors.black,
+                      onPressed: () {},
+                      child: Column(
+                        children: [
+                          Icon(
+                            Icons.calendar_month,
+                            size: 30,
+                            color: Colors.white54,
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text(
+                            "Bus Time table",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontFamily: 'sfpro',
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18),
+                          ),
+                        ],
+                      )),
+                ],
+              ),
             ],
           ),
         ),
