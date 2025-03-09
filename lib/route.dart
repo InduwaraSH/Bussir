@@ -1,3 +1,4 @@
+import 'package:bussir/bus_booking.dart';
 import 'package:bussir/bus_time_table.dart';
 import 'package:bussir/imageSlider.dart';
 import 'package:bussir/searchbar.dart';
@@ -49,10 +50,13 @@ class _homeState extends State<route> {
                 children: [
                   CupertinoButton(
                       color: Colors.grey[200],
-                      onPressed: () { Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const Bus_time_table()),
-            );},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const Bus_time_table()),
+                        );
+                      },
                       child: Column(
                         children: [
                           Image.asset(
@@ -77,7 +81,13 @@ class _homeState extends State<route> {
                   SizedBox(width: 20),
                   CupertinoButton(
                       color: Colors.grey[200],
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const Bus_booking()),
+                        );
+                      },
                       child: Column(
                         children: [
                           Image(
