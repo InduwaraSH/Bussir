@@ -1,49 +1,73 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class Bus_time_table extends StatelessWidget {
+class Bus_time_table extends StatefulWidget {
   const Bus_time_table({super.key});
 
   @override
+  _Bus_time_tableState createState() => _Bus_time_tableState();
+}
+
+class _Bus_time_tableState extends State<Bus_time_table> {
+  bool airplaneMode = false;
+
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: CupertinoNavigationBar(
-        leading: CupertinoNavigationBarBackButton(
-          color: Colors.amber,
-          previousPageTitle: "Home Page",
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
-      ),
-      body: SafeArea(
-        child: ListView(
+    return CupertinoPageScaffold(
+      navigationBar: const CupertinoNavigationBar(
+          middle: Text('CupertinoFormSection Sample')),
+      // Add safe area widget to place the CupertinoFormSection below the navigation bar.
+      child: SafeArea(
+        child: CupertinoFormSection(
+          header: const Text('Connectivity'),
           children: <Widget>[
-            CupertinoListTile(
-              title: Text('One-line with trailing widget'),
-              trailing: Icon(Icons.more_vert),
+            const CupertinoFormRow(
+              prefix: PrefixWidget(
+                icon: CupertinoIcons.bus,
+                title: 'Normal Bus',
+                color: CupertinoColors.systemGreen,
+              ),
+              child: Icon(CupertinoIcons.forward),
             ),
-            CupertinoListTile(
-              leading: FlutterLogo(),
-              title: Text('One-line with both widgets'),
-              trailing: Icon(Icons.more_vert),
-            ),
-            CupertinoListTile(
-              leading: FlutterLogo(size: 56.0),
-              title: Text('Two-line CupertinoListTile'),
-              subtitle: Text('Here is a subtitle'),
-              trailing: Icon(Icons.more_vert),
-              additionalInfo: Icon(Icons.info),
-            ),
-            CupertinoListTile(
-              key: Key('CupertinoListTile with background color'),
-              leading: FlutterLogo(size: 56.0),
-              title: Text('CupertinoListTile with background color'),
-              backgroundColor: Colors.lightBlue,
+            const CupertinoFormRow(
+              prefix: PrefixWidget(
+                icon: CupertinoIcons.bus,
+                title: 'Highway Bus',
+                color: CupertinoColors.systemRed,
+              ),
+              child: Icon(CupertinoIcons.forward),
             ),
           ],
         ),
       ),
+    );
+  }
+}
+
+class PrefixWidget extends StatelessWidget {
+  const PrefixWidget(
+      {super.key,
+      required this.icon,
+      required this.title,
+      required this.color});
+
+  final IconData icon;
+  final String title;
+  final Color color;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: <Widget>[
+        Container(
+          padding: const EdgeInsets.all(4.0),
+          decoration: BoxDecoration(
+              color: color, borderRadius: BorderRadius.circular(4.0)),
+          child: Icon(icon, color: CupertinoColors.white),
+        ),
+        const SizedBox(width: 15),
+        Text(title),
+      ],
     );
   }
 }
