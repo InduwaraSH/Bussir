@@ -14,28 +14,66 @@ class _Bus_time_tableState extends State<Bus_time_table> {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
-      navigationBar: const CupertinoNavigationBar(
-          middle: Text('CupertinoFormSection Sample')),
+      navigationBar:
+          const CupertinoNavigationBar(middle: Text('Bus Time Table')),
       // Add safe area widget to place the CupertinoFormSection below the navigation bar.
       child: SafeArea(
-        child: CupertinoFormSection(
-          header: const Text('Connectivity'),
-          children: <Widget>[
-            const CupertinoFormRow(
-              prefix: PrefixWidget(
-                icon: CupertinoIcons.bus,
-                title: 'Normal Bus',
-                color: CupertinoColors.systemGreen,
-              ),
-              child: Icon(CupertinoIcons.forward),
+        child: Column(
+          children: [
+            CupertinoFormSection(
+              header: const Text('Inter city Buses'),
+              children: <Widget>[
+                const CupertinoFormRow(
+                  prefix: PrefixWidget(
+                    icon: CupertinoIcons.bus,
+                    title: 'Normal Bus',
+                    color: CupertinoColors.systemGreen,
+                  ),
+                  child: Icon(CupertinoIcons.forward),
+                ),
+                const CupertinoFormRow(
+                  prefix: PrefixWidget(
+                    icon: CupertinoIcons.bus,
+                    title: 'Highway Bus',
+                    color: CupertinoColors.systemRed,
+                  ),
+                  child: Icon(CupertinoIcons.forward),
+                ),
+              ],
             ),
-            const CupertinoFormRow(
-              prefix: PrefixWidget(
-                icon: CupertinoIcons.bus,
-                title: 'Highway Bus',
-                color: CupertinoColors.systemRed,
-              ),
-              child: Icon(CupertinoIcons.forward),
+            CupertinoFormSection(
+              header: const Text('Inter province Buses'),
+              children: <Widget>[
+                const CupertinoFormRow(
+                  prefix: PrefixWidget(
+                    icon: CupertinoIcons.bus,
+                    title: 'Normal Bus',
+                    color: CupertinoColors.systemGreen,
+                  ),
+                  child: Icon(CupertinoIcons.forward),
+                ),
+                const CupertinoFormRow(
+                  prefix: PrefixWidget(
+                    icon: CupertinoIcons.bus,
+                    title: 'Highway Bus',
+                    color: CupertinoColors.systemRed,
+                  ),
+                  child: Icon(CupertinoIcons.forward),
+                ),
+              ],
+            ),
+            CupertinoFormSection(
+              header: const Text('Sisu Seriya Buses'),
+              children: <Widget>[
+                const CupertinoFormRow(
+                  prefix: PrefixWidget(
+                    icon: CupertinoIcons.bus,
+                    title: 'Normal Sisu Seriya Bus',
+                    color: CupertinoColors.systemYellow,
+                  ),
+                  child: Icon(CupertinoIcons.forward),
+                ),
+              ],
             ),
           ],
         ),
