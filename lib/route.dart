@@ -1,5 +1,7 @@
 import 'package:bussir/bus_booking.dart';
 import 'package:bussir/bus_time_table.dart';
+import 'package:bussir/feedback.dart';
+
 import 'package:bussir/imageSlider.dart';
 import 'package:bussir/searchbar.dart';
 import 'package:flutter/cupertino.dart';
@@ -118,7 +120,13 @@ class _homeState extends State<route> {
                 children: [
                   CupertinoButton(
                       color: Colors.grey[200],
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const Feedbackpage()),
+                        );
+                      },
                       child: Column(
                         children: [
                           Image(
