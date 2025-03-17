@@ -87,7 +87,7 @@ class _homeState extends State<route> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const Bus_booking()),
+                              builder: (context) => const BusBooking()),
                         );
                       },
                       child: Column(
@@ -124,7 +124,7 @@ class _homeState extends State<route> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const Feedbackpage()),
+                              builder: (context) => Feedbackpage()),
                         );
                       },
                       child: Column(
