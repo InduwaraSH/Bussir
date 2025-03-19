@@ -46,19 +46,28 @@ class _FeedbackpageState extends State<BusBooking> {
   List<Container> cards = [
     Container(
       alignment: Alignment.center,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(15.0),
+        color: Colors.blueAccent,
+      ),
       child: const Text('1'),
-      color: Colors.blue,
     ),
     Container(
       alignment: Alignment.center,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(15.0),
+        color: Colors.deepOrangeAccent,
+      ),
       child: const Text('2'),
-      color: Colors.red,
     ),
     Container(
       alignment: Alignment.center,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(15.0),
+        color: Colors.limeAccent,
+      ),
       child: const Text('3'),
-      color: Colors.purple,
-    )
+    ),
   ];
 
   void _showDialog(Widget child) {
@@ -291,14 +300,16 @@ class _FeedbackpageState extends State<BusBooking> {
                             fontFamily: 'sfpro',
                             fontWeight: FontWeight.bold),
                       )),
-                  Container(
+                  SizedBox(
+                    width: 350,
+                    height: 450,
                     child: CardSwiper(
                       cardsCount: cards.length,
                       cardBuilder: (context, index, percentThresholdX,
                               percentThresholdY) =>
                           cards[index],
-                      padding: EdgeInsets.only(
-                          top: 280, bottom: 280, left: 50, right: 50),
+                      // padding: EdgeInsets.only(
+                      //     top: 280, bottom: 280, left: 50, right: 50),
                     ),
                   ),
                 ],
