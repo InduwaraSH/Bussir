@@ -60,10 +60,11 @@ class _homeState extends State<route> {
                         );
                       },
                       child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Image.asset(
                             "images/bustimetable.png",
-                            height: 70,
+                            height: 65,
                             width: 120,
                           ),
                           SizedBox(
@@ -95,7 +96,7 @@ class _homeState extends State<route> {
                           Image(
                             image: AssetImage("images/seatbooking.png"),
                             height: 64,
-                            width: 130,
+                            width: 100,
                           ),
                           SizedBox(
                             height: 10,
@@ -136,6 +137,7 @@ class _homeState extends State<route> {
                           ),
                           SizedBox(
                             height: 10,
+                            width: 120,
                           ),
                           Text(
                             "Feedback",
@@ -156,10 +158,11 @@ class _homeState extends State<route> {
                           Image(
                             image: AssetImage("images/emergency.png"),
                             height: 60,
-                            width: 130,
+                            width: 100,
                           ),
                           SizedBox(
                             height: 10,
+                            width: 120,
                           ),
                           Text(
                             "Emergency",
