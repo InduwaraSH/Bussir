@@ -32,8 +32,8 @@ class _FeedbackpageState extends State<BusBooking> {
     'Nuwara Eliya',
     'Badulla',
     'Bandarawela',
-    'Haputale'
-        'Kegalle',
+    'Haputale',
+    'Kegalle',
     'Kurunegala',
     'Anuradhapura',
     'Polonnaruwa',
@@ -45,13 +45,22 @@ class _FeedbackpageState extends State<BusBooking> {
 
   List<Container> cards = [
     Container(
-      alignment: Alignment.center,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15.0),
-        color: Colors.blueAccent,
-      ),
-      child: const Text('1'),
-    ),
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15.0),
+          color: Colors.blueAccent,
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text("data"),
+            SizedBox(
+              width: 300,
+              height: 100,
+              child: DecoratedBox(decoration: BoxDecoration(color: Colors.red)),
+            )
+          ],
+        )),
     Container(
       alignment: Alignment.center,
       decoration: BoxDecoration(
@@ -115,176 +124,167 @@ class _FeedbackpageState extends State<BusBooking> {
                 ),
                 Column(
                   children: [
-                    Container(
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(15.0),
-                        child: Container(
-                          height: 200,
-                          width: size.width - 40,
-                          color: Colors.grey[200],
-                          child: DefaultTextStyle(
-                            style: TextStyle(
-                                color:
-                                    CupertinoColors.label.resolveFrom(context),
-                                fontSize: 22.0),
-                            child: Column(
-                              children: [
-                                SizedBox(height: 10.0),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: <Widget>[
-                                    SizedBox(
-                                      width: 20,
-                                    ),
-                                    const Text(
-                                      'Pickup Stand :  ',
-                                      style: TextStyle(
-                                          fontFamily: 'sfpro',
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 18),
-                                    ),
-                                    CupertinoButton(
-                                      padding: EdgeInsets.zero,
-                                      // Display a CupertinoPicker with list of Stands.
-                                      onPressed: () => _showDialog(
-                                        CupertinoPicker(
-                                          magnification: 1.22,
-                                          squeeze: 1.2,
-                                          useMagnifier: true,
-                                          itemExtent: _kItemExtent,
-                                          // This sets the initial item.
-                                          scrollController:
-                                              FixedExtentScrollController(
-                                                  initialItem: _selectedTown),
-                                          // This is called when selected item is changed.
-                                          onSelectedItemChanged:
-                                              (int selectedItem) {
-                                            setState(() {
-                                              _selectedTown = selectedItem;
-                                            });
-                                          },
-                                          children: List<Widget>.generate(
-                                              _townName.length, (int index) {
-                                            return Center(
-                                                child: Text(_townName[index]));
-                                          }),
-                                        ),
-                                      ),
-                                      // This displays the selected fruit name.
-                                      child: ClipRRect(
-                                        borderRadius:
-                                            BorderRadius.circular(5.0),
-                                        child: Container(
-                                          color: Colors.grey[200],
-                                          padding: EdgeInsets.only(
-                                              left: 20.0,
-                                              right: 20.0,
-                                              top: 5.0,
-                                              bottom: 5.0),
-                                          child: Text(_townName[_selectedTown],
-                                              style: const TextStyle(
-                                                  fontSize: 20.0,
-                                                  color: Colors.black)),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                Row(
-                                  children: [
-                                    SizedBox(
-                                      width: 60,
-                                    ),
-                                    Icon(
-                                      Icons.more_vert,
-                                      size: 30,
-                                    )
-                                  ],
-                                ),
-                                Row(
-                                  children: [
-                                    SizedBox(
-                                      width: 60,
-                                    ),
-                                    Icon(
-                                      Icons.arrow_drop_down_circle,
-                                      size: 30,
-                                    )
-                                  ],
-                                ),
-                                Row(
-                                  children: [
-                                    SizedBox(
-                                      width: 60,
-                                    ),
-                                    Icon(
-                                      Icons.more_vert,
-                                      size: 30,
-                                    )
-                                  ],
-                                ),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: <Widget>[
-                                    SizedBox(
-                                      width: 20,
-                                    ),
-                                    Text(
-                                      "Drop Stand :  ",
-                                      style: TextStyle(
-                                          fontFamily: 'sfpro',
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 18),
-                                    ),
-                                    CupertinoButton(
-                                      padding: EdgeInsets.zero,
-                                      onPressed: () =>
-                                          _showDialog(CupertinoPicker(
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(15.0),
+                      child: Container(
+                        height: 200,
+                        width: size.width - 40,
+                        color: Colors.grey[200],
+                        child: DefaultTextStyle(
+                          style: TextStyle(
+                              color: CupertinoColors.label.resolveFrom(context),
+                              fontSize: 22.0),
+                          child: Column(
+                            children: [
+                              SizedBox(height: 10.0),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: <Widget>[
+                                  SizedBox(
+                                    width: 20,
+                                  ),
+                                  const Text(
+                                    'Pickup Stand :  ',
+                                    style: TextStyle(
+                                        fontFamily: 'sfpro',
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 18),
+                                  ),
+                                  CupertinoButton(
+                                    padding: EdgeInsets.zero,
+                                    // Display a CupertinoPicker with list of Stands.
+                                    onPressed: () => _showDialog(
+                                      CupertinoPicker(
                                         magnification: 1.22,
                                         squeeze: 1.2,
                                         useMagnifier: true,
                                         itemExtent: _kItemExtent,
+                                        // This sets the initial item.
                                         scrollController:
                                             FixedExtentScrollController(
-                                                initialItem:
-                                                    _selectedTown_Drop),
+                                                initialItem: _selectedTown),
+                                        // This is called when selected item is changed.
                                         onSelectedItemChanged:
-                                            (int selectedItemDrip) {
+                                            (int selectedItem) {
                                           setState(() {
-                                            _selectedTown_Drop =
-                                                selectedItemDrip;
+                                            _selectedTown = selectedItem;
                                           });
                                         },
                                         children: List<Widget>.generate(
-                                            _townName_Drop.length, (int index) {
+                                            _townName.length, (int index) {
                                           return Center(
-                                              child:
-                                                  Text(_townName_Drop[index]));
+                                              child: Text(_townName[index]));
                                         }),
-                                      )),
-                                      child: ClipRRect(
-                                        borderRadius:
-                                            BorderRadius.circular(5.0),
-                                        child: Container(
-                                          color: Colors.grey[200],
-                                          padding: EdgeInsets.only(
-                                              left: 20.0,
-                                              right: 20.0,
-                                              top: 5.0,
-                                              bottom: 5.0),
-                                          child: Text(
-                                              _townName_Drop[
-                                                  _selectedTown_Drop],
-                                              style: const TextStyle(
-                                                  fontSize: 20.0,
-                                                  color: Colors.black)),
-                                        ),
                                       ),
-                                    )
-                                  ],
-                                )
-                              ],
-                            ),
+                                    ),
+                                    // This displays the selected fruit name.
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(5.0),
+                                      child: Container(
+                                        color: Colors.grey[200],
+                                        padding: EdgeInsets.only(
+                                            left: 20.0,
+                                            right: 20.0,
+                                            top: 5.0,
+                                            bottom: 5.0),
+                                        child: Text(_townName[_selectedTown],
+                                            style: const TextStyle(
+                                                fontSize: 20.0,
+                                                color: Colors.black)),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  SizedBox(
+                                    width: 60,
+                                  ),
+                                  Icon(
+                                    Icons.more_vert,
+                                    size: 30,
+                                  )
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  SizedBox(
+                                    width: 60,
+                                  ),
+                                  Icon(
+                                    Icons.arrow_drop_down_circle,
+                                    size: 30,
+                                  )
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  SizedBox(
+                                    width: 60,
+                                  ),
+                                  Icon(
+                                    Icons.more_vert,
+                                    size: 30,
+                                  )
+                                ],
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: <Widget>[
+                                  SizedBox(
+                                    width: 20,
+                                  ),
+                                  Text(
+                                    "Drop Stand :  ",
+                                    style: TextStyle(
+                                        fontFamily: 'sfpro',
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 18),
+                                  ),
+                                  CupertinoButton(
+                                    padding: EdgeInsets.zero,
+                                    onPressed: () =>
+                                        _showDialog(CupertinoPicker(
+                                      magnification: 1.22,
+                                      squeeze: 1.2,
+                                      useMagnifier: true,
+                                      itemExtent: _kItemExtent,
+                                      scrollController:
+                                          FixedExtentScrollController(
+                                              initialItem: _selectedTown_Drop),
+                                      onSelectedItemChanged:
+                                          (int selectedItemDrip) {
+                                        setState(() {
+                                          _selectedTown_Drop = selectedItemDrip;
+                                        });
+                                      },
+                                      children: List<Widget>.generate(
+                                          _townName_Drop.length, (int index) {
+                                        return Center(
+                                            child: Text(_townName_Drop[index]));
+                                      }),
+                                    )),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(5.0),
+                                      child: Container(
+                                        color: Colors.grey[200],
+                                        padding: EdgeInsets.only(
+                                            left: 20.0,
+                                            right: 20.0,
+                                            top: 5.0,
+                                            bottom: 5.0),
+                                        child: Text(
+                                            _townName_Drop[_selectedTown_Drop],
+                                            style: const TextStyle(
+                                                fontSize: 20.0,
+                                                color: Colors.black)),
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              )
+                            ],
                           ),
                         ),
                       ),
