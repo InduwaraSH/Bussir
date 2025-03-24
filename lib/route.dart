@@ -1,5 +1,6 @@
 import 'package:bussir/bus_booking.dart';
 import 'package:bussir/bus_time_table.dart';
+import 'package:bussir/emergency.dart';
 import 'package:bussir/feedback.dart';
 
 import 'package:bussir/imageSlider.dart';
@@ -152,7 +153,12 @@ class _homeState extends State<route> {
                   SizedBox(width: 20),
                   CupertinoButton(
                       color: Colors.grey[200],
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => emergency()),
+                        );
+                      },
                       child: Column(
                         children: [
                           Image(

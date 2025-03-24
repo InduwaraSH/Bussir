@@ -1,38 +1,209 @@
-import 'package:flutter_card_swiper/flutter_card_swiper.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Feedbackpage extends StatelessWidget {
-  List<Container> cards = [
-    Container(
-      alignment: Alignment.center,
-      color: Colors.blue,
-      child: const Text('1'),
-      
-    ),
-    Container(
-      alignment: Alignment.center,
-      color: Colors.red,
-      child: const Text('2'),
-    ),
-    Container(
-      alignment: Alignment.center,
-      color: Colors.purple,
-      child: const Text('3'),
-    )
-  ];
-
-  Feedbackpage({super.key});
+  const Feedbackpage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Flexible(
-        child: CardSwiper(
-          cardsCount: cards.length,
-          cardBuilder: (context, index, percentThresholdX, percentThresholdY) =>
-              cards[index],
-          padding: EdgeInsets.only(top: 280, bottom: 280, left: 50, right: 50),
-          
+      appBar: CupertinoNavigationBar(
+        leading: CupertinoNavigationBarBackButton(
+          color: Colors.amber,
+          previousPageTitle: "Home page",
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+      ),
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: Column(
+            children: [
+              Form(
+                autovalidateMode: AutovalidateMode.always,
+                onChanged: () {
+                  Form.maybeOf(primaryFocus!.context!)?.save();
+                },
+                child: CupertinoFormSection.insetGrouped(
+                  header: const Text('Bus Details'),
+                  children: [
+                    CupertinoFormRow(
+                      prefix: const Text(
+                        'Bus Number',
+                        style: TextStyle(
+                            fontFamily: 'sfpro', fontWeight: FontWeight.bold),
+                      ),
+                      child: CupertinoTextFormFieldRow(
+                        placeholder: 'Enter bus number',
+                        onSaved: (value) {
+                          print(value);
+                        },
+                      ),
+                    ),
+                    CupertinoFormRow(
+                      prefix: const Text('Bus Route',
+                          style: TextStyle(
+                              fontFamily: 'sfpro',
+                              fontWeight: FontWeight.bold)),
+                      child: CupertinoTextFormFieldRow(
+                        placeholder: 'Enter bus route',
+                        onSaved: (value) {
+                          print(value);
+                        },
+                      ),
+                    ),
+
+                    CupertinoFormRow(
+                      prefix: const Text('Relevant Date',
+                          style: TextStyle(
+                              fontFamily: 'sfpro',
+                              fontWeight: FontWeight.bold)),
+                      child: CupertinoTextFormFieldRow(
+                        placeholder: 'Enter Relevant Date',
+                        onSaved: (value) {
+                          print(value);
+                        },
+                      ),
+                    ),
+
+                    CupertinoFormRow(
+                      prefix: const Text('Bus Timing',
+                          style: TextStyle(
+                              fontFamily: 'sfpro',
+                              fontWeight: FontWeight.bold)),
+                      child: CupertinoTextFormFieldRow(
+                        placeholder: 'Enter bus time',
+                        onSaved: (value) {
+                          print(value);
+                        },
+                      ),
+                    ),
+                    CupertinoFormRow(
+                      prefix: const Text('Bus Start',
+                          style: TextStyle(
+                              fontFamily: 'sfpro',
+                              fontWeight: FontWeight.bold)),
+                      child: CupertinoTextFormFieldRow(
+                        placeholder: 'Enter bus stop',
+                        onSaved: (value) {
+                          print(value);
+                        },
+                      ),
+                    ),
+                    CupertinoFormRow(
+                      prefix: const Text('Bus Stop',
+                          style: TextStyle(
+                              fontFamily: 'sfpro',
+                              fontWeight: FontWeight.bold)),
+                      child: CupertinoTextFormFieldRow(
+                        placeholder: 'Enter bus stop',
+                        onSaved: (value) {
+                          print(value);
+                        },
+                      ),
+                    ),
+
+                    // CupertinoButton(
+                    //   color: Colors.amber,
+                    //   child: const Text('Submit'),
+                    //   onPressed: () {
+                    //     Form.of(primaryFocus!.context!)?.save();
+                    //   },
+                    // ),
+                  ],
+                ),
+              ),
+              Form(
+                autovalidateMode: AutovalidateMode.always,
+                onChanged: () {
+                  Form.maybeOf(primaryFocus!.context!)?.save();
+                },
+                child: CupertinoFormSection.insetGrouped(
+                  header: const Text('Bus Details'),
+                  children: [
+                    CupertinoFormRow(
+                      prefix: const Text(
+                        'Bus Number',
+                        style: TextStyle(
+                            fontFamily: 'sfpro', fontWeight: FontWeight.bold),
+                      ),
+                      child: CupertinoTextFormFieldRow(
+                        placeholder: 'Enter bus number',
+                        onSaved: (value) {
+                          print(value);
+                        },
+                      ),
+                    ),
+                    CupertinoFormRow(
+                      prefix: const Text('Bus Route',
+                          style: TextStyle(
+                              fontFamily: 'sfpro',
+                              fontWeight: FontWeight.bold)),
+                      child: CupertinoTextFormFieldRow(
+                        placeholder: 'Enter bus route',
+                        onSaved: (value) {
+                          print(value);
+                        },
+                      ),
+                    ),
+
+                    CupertinoFormRow(
+                      prefix: const Text('Relevant Date',
+                          style: TextStyle(
+                              fontFamily: 'sfpro',
+                              fontWeight: FontWeight.bold)),
+                      child: CupertinoTextFormFieldRow(
+                        placeholder: 'Enter Relevant Date',
+                        onSaved: (value) {
+                          print(value);
+                        },
+                      ),
+                    ),
+
+                    CupertinoFormRow(
+                      prefix: const Text('Bus Timing',
+                          style: TextStyle(
+                              fontFamily: 'sfpro',
+                              fontWeight: FontWeight.bold)),
+                      child: CupertinoTextFormFieldRow(
+                        placeholder: 'Enter bus time',
+                        onSaved: (value) {
+                          print(value);
+                        },
+                      ),
+                    ),
+                    CupertinoFormRow(
+                      prefix: const Text('Bus Start',
+                          style: TextStyle(
+                              fontFamily: 'sfpro',
+                              fontWeight: FontWeight.bold)),
+                      child: CupertinoTextFormFieldRow(
+                        placeholder: 'Enter bus stop',
+                        onSaved: (value) {
+                          print(value);
+                        },
+                      ),
+                    ),
+                    CupertinoFormRow(
+                      prefix: const Text('Bus Stop',
+                          style: TextStyle(
+                              fontFamily: 'sfpro',
+                              fontWeight: FontWeight.bold)),
+                      child: CupertinoTextFormFieldRow(
+                        placeholder: 'Enter bus stop',
+                        onSaved: (value) {
+                          print(value);
+                        },
+                      ),
+                    ),
+
+      
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
