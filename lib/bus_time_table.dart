@@ -1,12 +1,15 @@
 import 'package:flutter/cupertino.dart';
 
+// ignore: camel_case_types
 class Bus_time_table extends StatefulWidget {
   const Bus_time_table({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _Bus_time_tableState createState() => _Bus_time_tableState();
 }
 
+// ignore: camel_case_types
 class _Bus_time_tableState extends State<Bus_time_table> {
   bool airplaneMode = false;
 
