@@ -1,5 +1,7 @@
-import 'package:bussir/Govrt.dart';
+import 'package:bussir/Ambulence_tp.dart';
+import 'package:bussir/gov_hos_tp.dart';
 import 'package:bussir/feedback.dart';
+import 'package:bussir/private_hos_tp.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -33,7 +35,7 @@ class _Bus_time_tableState extends State<emergency> {
                     // Handle onPressed event
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const gov()),
+                      MaterialPageRoute(builder: (context) => const gov_hos_tp()),
                     );
                   },
                   child: const CupertinoFormRow(
@@ -50,7 +52,7 @@ class _Bus_time_tableState extends State<emergency> {
                     // Handle onPressed event
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const gov()),
+                      MaterialPageRoute(builder: (context) => const PrivateHosTp()),
                     );
                   },
                   child: const CupertinoFormRow(
@@ -67,7 +69,7 @@ class _Bus_time_tableState extends State<emergency> {
                     // Handle onPressed event
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const gov()),
+                      MaterialPageRoute(builder: (context) => const AmbulenceTp()),
                     );
                   },
                   child: CupertinoFormRow(
