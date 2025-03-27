@@ -8,7 +8,7 @@ class gov_hos_tp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CupertinoNavigationBar(
-        middle: const Text('Government Hospital'),
+        middle: const Text('Government Hospital Details'),
         leading: CupertinoNavigationBarBackButton(
           color: Colors.amber,
           onPressed: () {
