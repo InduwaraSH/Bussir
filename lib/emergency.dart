@@ -1,6 +1,8 @@
 import 'package:bussir/Ambulence_tp.dart';
+import 'package:bussir/fire_tp.dart';
 import 'package:bussir/gov_hos_tp.dart';
 import 'package:bussir/feedback.dart';
+import 'package:bussir/police_tp.dart';
 import 'package:bussir/private_hos_tp.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -29,13 +31,15 @@ class _Bus_time_tableState extends State<emergency> {
           children: [
             CupertinoFormSection(
               header: const Text('Health Care Services'),
+              
               children: <Widget>[
                 GestureDetector(
                   onTap: () {
                     // Handle onPressed event
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const gov_hos_tp()),
+                      MaterialPageRoute(
+                          builder: (context) => const gov_hos_tp()),
                     );
                   },
                   child: const CupertinoFormRow(
@@ -52,7 +56,8 @@ class _Bus_time_tableState extends State<emergency> {
                     // Handle onPressed event
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const PrivateHosTp()),
+                      MaterialPageRoute(
+                          builder: (context) => const PrivateHosTp()),
                     );
                   },
                   child: const CupertinoFormRow(
@@ -69,7 +74,8 @@ class _Bus_time_tableState extends State<emergency> {
                     // Handle onPressed event
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const AmbulenceTp()),
+                      MaterialPageRoute(
+                          builder: (context) => const AmbulenceTp()),
                     );
                   },
                   child: CupertinoFormRow(
@@ -83,26 +89,44 @@ class _Bus_time_tableState extends State<emergency> {
                 ),
               ],
             ),
-            CupertinoFormSection(
-              header: const Text('Other Emergency Services'),
-              children: <Widget>[
-                const CupertinoFormRow(
-                  prefix: PrefixWidget(
-                    icon: CupertinoIcons.shield_lefthalf_fill,
-                    title: 'Police Station',
-                    color: CupertinoColors.black,
+            GestureDetector(
+              onTap: () {
+                // Handle onPressed event
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const PoliceTp()),
+                );
+              },
+              child: CupertinoFormSection(
+                header: const Text('Other Emergency Services'),
+                children: <Widget>[
+                  const CupertinoFormRow(
+                    prefix: PrefixWidget(
+                      icon: CupertinoIcons.shield_lefthalf_fill,
+                      title: 'Police Station',
+                      color: CupertinoColors.black,
+                    ),
+                    child: Icon(CupertinoIcons.forward),
                   ),
-                  child: Icon(CupertinoIcons.forward),
-                ),
-                const CupertinoFormRow(
-                  prefix: PrefixWidget(
-                    icon: Icons.fire_truck,
-                    title: 'Fire Service',
-                    color: CupertinoColors.activeOrange,
+                  GestureDetector(
+                    onTap: () {
+                      // Handle onPressed event
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const FireTp()),
+                      );
+                    },
+                    child: const CupertinoFormRow(
+                      prefix: PrefixWidget(
+                        icon: Icons.fire_truck,
+                        title: 'Fire Service',
+                        color: CupertinoColors.activeOrange,
+                      ),
+                      child: Icon(CupertinoIcons.forward),
+                    ),
                   ),
-                  child: Icon(CupertinoIcons.forward),
-                ),
-              ],
+                ],
+              ),
             ),
           ],
         ),
