@@ -1,7 +1,6 @@
 import 'package:bussir/Ambulence_tp.dart';
 import 'package:bussir/fire_tp.dart';
 import 'package:bussir/gov_hos_tp.dart';
-import 'package:bussir/feedback.dart';
 import 'package:bussir/police_tp.dart';
 import 'package:bussir/private_hos_tp.dart';
 import 'package:flutter/cupertino.dart';

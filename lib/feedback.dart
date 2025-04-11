@@ -6,17 +6,9 @@ class Feedbackpage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: CupertinoNavigationBar(
-        leading: CupertinoNavigationBarBackButton(
-          color: Colors.amber,
-          previousPageTitle: "Home page",
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
-      ),
-      body: SingleChildScrollView(
+    return CupertinoPageScaffold(
+      navigationBar: const CupertinoNavigationBar(middle: Text('Feedback')),
+      child: SingleChildScrollView(
         child: SafeArea(
           child: Column(
             children: [
@@ -136,6 +128,17 @@ class Feedbackpage extends StatelessWidget {
                       ),
                     ),
                   ],
+                ),
+              ),
+              const SizedBox(height: 30),
+              CupertinoButton(
+                color: Colors.amber,
+                onPressed: () {},
+                disabledColor: CupertinoColors.systemFill,
+                child: const Text(
+                  'Give Your Feedback',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold, fontFamily: 'sfpro'),
                 ),
               ),
             ],

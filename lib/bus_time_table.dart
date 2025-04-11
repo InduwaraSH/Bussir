@@ -1,4 +1,6 @@
+import 'package:bussir/ic_tt_normalnus.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 // ignore: camel_case_types
 class Bus_time_table extends StatefulWidget {
@@ -25,13 +27,22 @@ class _Bus_time_tableState extends State<Bus_time_table> {
             CupertinoFormSection(
               header: const Text('Inter city Buses'),
               children: <Widget>[
-                const CupertinoFormRow(
-                  prefix: PrefixWidget(
-                    icon: CupertinoIcons.bus,
-                    title: 'Normal Bus',
-                    color: CupertinoColors.systemGreen,
+                GestureDetector(
+                  child: CupertinoFormRow(
+                    prefix: const PrefixWidget(
+                      icon: CupertinoIcons.bus,
+                      title: 'Normal Bus',
+                      color: CupertinoColors.systemGreen,
+                    ),
+                    child: const Icon(CupertinoIcons.forward),
                   ),
-                  child: Icon(CupertinoIcons.forward),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const IntCity_tt_NorBus()),
+                    );
+                  },
                 ),
                 const CupertinoFormRow(
                   prefix: PrefixWidget(

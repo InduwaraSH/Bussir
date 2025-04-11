@@ -35,11 +35,11 @@ class _homeState extends State<route> {
                 ],
               ),
               SizedBox(
-                height: 10,
+                height: 20,
               ),
               Searchbar(),
               SizedBox(
-                height: 20,
+                height: 30,
               ),
               imageslider(
                   onImageChanged: (value) {
@@ -65,12 +65,12 @@ class _homeState extends State<route> {
                         children: [
                           Image.asset(
                             "images/bustimetable.png",
-                            height: 65,
-                            width: 120,
+                            height: 75,
+                            width: 150,
                           ),
                           SizedBox(
                             height: 10,
-                            width: 130,
+                            width: 150,
                           ),
                           Text(
                             "Bus Time table",
@@ -96,8 +96,8 @@ class _homeState extends State<route> {
                         children: [
                           Image(
                             image: AssetImage("images/seatbooking.png"),
-                            height: 64,
-                            width: 100,
+                            height: 75,
+                            width: 150,
                           ),
                           SizedBox(
                             height: 10,
@@ -133,8 +133,8 @@ class _homeState extends State<route> {
                         children: [
                           Image(
                             image: AssetImage("images/feedback.png"),
-                            height: 60,
-                            width: 130,
+                            height: 75,
+                            width: 150,
                           ),
                           SizedBox(
                             height: 10,
@@ -163,8 +163,8 @@ class _homeState extends State<route> {
                         children: [
                           Image(
                             image: AssetImage("images/emergency.png"),
-                            height: 60,
-                            width: 100,
+                            height: 75,
+                            width: 150,
                           ),
                           SizedBox(
                             height: 10,

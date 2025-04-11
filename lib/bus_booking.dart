@@ -100,22 +100,16 @@ class _FeedbackpageState extends State<BusBooking> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Scaffold(
-      appBar: CupertinoNavigationBar(
-        leading: CupertinoNavigationBarBackButton(
-          color: Colors.amber,
-          previousPageTitle: 'Home Page',
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
+    return CupertinoPageScaffold(
+      navigationBar: CupertinoNavigationBar(
+        middle: Text("Bus Booking"),
       ),
 
-      body: SingleChildScrollView(
+      child: SingleChildScrollView(
         child: Column(
           children: [
             SizedBox(
-              height: 20,
+              height: 150,
             ),
             Row(
               children: [
