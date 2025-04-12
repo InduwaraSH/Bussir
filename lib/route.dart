@@ -66,11 +66,11 @@ class _homeState extends State<route> {
                           Image.asset(
                             "images/bustimetable.png",
                             height: 75,
-                            width: 150,
+                            width: 135,
                           ),
                           SizedBox(
                             height: 10,
-                            width: 150,
+                            width: 135,
                           ),
                           Text(
                             "Bus Time table",
@@ -97,11 +97,11 @@ class _homeState extends State<route> {
                           Image(
                             image: AssetImage("images/seatbooking.png"),
                             height: 75,
-                            width: 150,
+                            width: 135,
                           ),
                           SizedBox(
                             height: 10,
-                            width: 120,
+                            width: 135,
                           ),
                           Text(
                             "Bus Booking",
@@ -134,11 +134,11 @@ class _homeState extends State<route> {
                           Image(
                             image: AssetImage("images/feedback.png"),
                             height: 75,
-                            width: 150,
+                            width: 135,
                           ),
                           SizedBox(
                             height: 10,
-                            width: 120,
+                            width: 135,
                           ),
                           Text(
                             "Feedback",
@@ -164,11 +164,11 @@ class _homeState extends State<route> {
                           Image(
                             image: AssetImage("images/emergency.png"),
                             height: 75,
-                            width: 150,
+                            width: 135,
                           ),
                           SizedBox(
                             height: 10,
-                            width: 120,
+                            width: 135,
                           ),
                           Text(
                             "Emergency",
