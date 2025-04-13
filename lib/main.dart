@@ -2,12 +2,15 @@ import 'package:bussir/alerts.dart';
 import 'package:bussir/home.dart';
 import 'package:bussir/route.dart';
 import 'package:bussir/tickets.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/instance_manager.dart';
 import 'package:get/state_manager.dart';
 import 'package:iconsax/iconsax.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  Firebase.initializeApp();
   runApp(const MyApp());
 }
 
