@@ -19,7 +19,7 @@ class _IntCity_tt_NorBusState extends State<IntCity_tt_NorBus> {
     return Container(
       padding: const EdgeInsets.all(10),
       margin: const EdgeInsets.all(10),
-      height: 110,
+      height: 120,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         color: const Color.fromARGB(255, 255, 255, 255),
@@ -50,7 +50,7 @@ class _IntCity_tt_NorBusState extends State<IntCity_tt_NorBus> {
               Flexible(
                 child: Row(
                   children: [
-                    Icon(Icons.location_on, color: Colors.red, size: 25),
+                    Icon(Icons.location_on, color: Colors.black, size: 25),
                     SizedBox(
                       width: 10,
                     ),
@@ -60,7 +60,7 @@ class _IntCity_tt_NorBusState extends State<IntCity_tt_NorBus> {
                           fontFamily: 'sfpro',
                           fontSize: 19,
                           fontWeight: FontWeight.bold,
-                          color: Colors.pinkAccent),
+                          color: Colors.black),
                     ),
                     SizedBox(
                       width: 10,
@@ -69,7 +69,7 @@ class _IntCity_tt_NorBusState extends State<IntCity_tt_NorBus> {
                         style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
-                            color: Colors.pink,
+                            color: Colors.black,
                             fontFamily: 'sfpro'),
                         softWrap: true)
                   ],
@@ -81,8 +81,7 @@ class _IntCity_tt_NorBusState extends State<IntCity_tt_NorBus> {
               Flexible(
                 child: Row(
                   children: [
-                    Icon(Icons.location_city,
-                        color: Colors.lightGreen, size: 25),
+                    Icon(Icons.location_city, color: Colors.amber, size: 25),
                     SizedBox(
                       width: 10,
                     ),
@@ -92,7 +91,7 @@ class _IntCity_tt_NorBusState extends State<IntCity_tt_NorBus> {
                           fontFamily: 'sfpro',
                           fontSize: 19,
                           fontWeight: FontWeight.bold,
-                          color: Colors.lightGreen),
+                          color: Colors.amber),
                     ),
                     SizedBox(
                       width: 10,
@@ -101,7 +100,7 @@ class _IntCity_tt_NorBusState extends State<IntCity_tt_NorBus> {
                         style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
-                            color: Colors.lightGreen[800],
+                            color: Colors.amber,
                             fontFamily: 'sfpro'),
                         softWrap: true),
                     SizedBox(
@@ -146,13 +145,12 @@ class _IntCity_tt_NorBusState extends State<IntCity_tt_NorBus> {
             ],
           ),
           Positioned(
-              right: 10,
-              top: 10,
-              child: Container(
-                width: 50,
-                height: 110,
-                color: Colors.blue,
-              )),
+              right: 0,
+              top: 20,
+              child: IconButton(
+                  onPressed: () {},
+                  icon: Icon(Icons.arrow_circle_right_rounded,
+                      color: Colors.black45, size: 50))),
         ],
       ),
     );
@@ -162,7 +160,14 @@ class _IntCity_tt_NorBusState extends State<IntCity_tt_NorBus> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Normal Bus Time Table"),
+          title: Text(
+            "Normal Bus Time Table",
+            style: TextStyle(
+                fontFamily: 'sfpro',
+                fontSize: 20,
+                color: Colors.black,
+                fontWeight: FontWeight.bold),
+          ),
         ),
         body: Container(
           height: double.infinity,

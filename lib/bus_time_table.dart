@@ -33,6 +33,7 @@ class _Bus_time_tableState extends State<Bus_time_table> {
                       icon: CupertinoIcons.bus,
                       title: 'Normal Bus',
                       color: CupertinoColors.systemGreen,
+                      
                     ),
                     child: const Icon(CupertinoIcons.forward),
                   ),
