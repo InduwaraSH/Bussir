@@ -1,3 +1,4 @@
+import 'package:bussir/timeTableBusDetail.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:flutter/cupertino.dart';
@@ -136,7 +137,7 @@ class _IntCity_tt_NorBusState extends State<IntCity_tt_NorBus> {
                         style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
-                            color: Colors.blue[800],
+                            color: Colors.blue,
                             fontFamily: 'sfpro'),
                         softWrap: true)
                   ],
@@ -148,7 +149,12 @@ class _IntCity_tt_NorBusState extends State<IntCity_tt_NorBus> {
               right: 0,
               top: 20,
               child: IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (Builder) => BusDetailModelpg()));
+                  },
                   icon: Icon(Icons.arrow_circle_right_rounded,
                       color: Colors.black45, size: 50))),
         ],
