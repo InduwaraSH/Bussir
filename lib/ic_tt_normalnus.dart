@@ -17,6 +17,10 @@ class _IntCity_tt_NorBusState extends State<IntCity_tt_NorBus> {
       FirebaseDatabase.instance.ref().child('NormalBusTimeTable_IC');
 
   Widget listItem({required Map Student}) {
+    final String Driver_name = Student['Driver Name'];
+    final String Driver_TP_number = Student['Driver TP Number'];
+    final String Bus_number = Student['Bus Number'];
+
     return Container(
       padding: const EdgeInsets.all(10),
       margin: const EdgeInsets.all(10),
@@ -150,10 +154,14 @@ class _IntCity_tt_NorBusState extends State<IntCity_tt_NorBus> {
               top: 20,
               child: IconButton(
                   onPressed: () {
+                    String Driver_Name = Driver_name;
+                    String Driver_TP_Number = Driver_TP_number;
+                    String Bus_Number = Bus_number;
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (Builder) => BusDetailModelpg()));
+                            builder: (Builder) => BusDetailModelpg(driverName: Driver_Name,
+                                  driverTPNumber: Driver_TP_Number,busNumber: Bus_Number,)));
                   },
                   icon: Icon(Icons.arrow_circle_right_rounded,
                       color: Colors.black45, size: 50))),

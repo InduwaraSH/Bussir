@@ -1,9 +1,23 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class BusDetailModelpg extends StatelessWidget {
-  const BusDetailModelpg({super.key});
+class BusDetailModelpg extends StatefulWidget {
+  final String driverName;
+  final String driverTPNumber;
+  final String busNumber;
 
+  const BusDetailModelpg({
+    super.key,
+    required this.driverName,
+    required this.driverTPNumber,
+    required this.busNumber,
+  });
+
+  @override
+  State<BusDetailModelpg> createState() => _BusDetailModelpgState();
+}
+
+class _BusDetailModelpgState extends State<BusDetailModelpg> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -72,7 +86,7 @@ class BusDetailModelpg extends StatelessWidget {
                             height: 20,
                           ),
                           Text(
-                            "ND-1234",
+                            widget.busNumber,
                             style: TextStyle(
                                 color: Colors.white,
                                 fontFamily: 'sfpro',
@@ -118,11 +132,11 @@ class BusDetailModelpg extends StatelessWidget {
                             height: 20,
                           ),
                           Text(
-                            "John Doe",
+                            widget.driverName,
                             style: TextStyle(
                                 color: Colors.white,
                                 fontFamily: 'sfpro',
-                                fontSize: 45,
+                                fontSize: 30,
                                 fontWeight: FontWeight.bold),
                           ),
                         ],
