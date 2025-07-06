@@ -1,4 +1,5 @@
 import 'package:elevated_ticket_widget/elevated_ticket_widget.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 
 class Ongoingscreen extends StatefulWidget {
@@ -10,41 +11,77 @@ class Ongoingscreen extends StatefulWidget {
 
 class _ClosedtktState extends State<Ongoingscreen> {
   // Sample Ticket Data List
-  final List<Map<String, String>> tickets = [
-    {
-      "busNo": "ABC123",
-      "boardingTime": "11:30 AM",
-      "gate": "08-Hw",
-      "seat": "11",
-      "passengerName": "Induwara Dilhara",
-      "from": "Matara",
-      "to": "Colombo",
-      "date": "30NOV",
-      "ticketNo": "345-65647527457",
-    },
-    {
-      "busNo": "XYZ456",
-      "boardingTime": "2:45 PM",
-      "gate": "05-X",
-      "seat": "7",
-      "passengerName": "Kamal Perera",
-      "from": "Galle",
-      "to": "Kandy",
-      "date": "15DEC",
-      "ticketNo": "987-123456789",
-    },
-    {
-      "busNo": "XYZ456",
-      "boardingTime": "2:45 PM",
-      "gate": "05-X",
-      "seat": "7",
-      "passengerName": "Kamal Perera",
-      "from": "Galle",
-      "to": "Kandy",
-      "date": "15DEC",
-      "ticketNo": "987-123456789",
-    },
-  ];
+  // final List<Map<String, String>> tickets = [
+  //   {
+  //     "busNo": "ABC123",
+  //     "boardingTime": "11:30 AM",
+  //     "gate": "08-Hw",
+  //     "seat": "11",
+  //     "passengerName": "Induwara Dilhara",
+  //     "from": "Matara",
+  //     "to": "Colombo",
+  //     "date": "30NOV",
+  //     "ticketNo": "345-65647527457",
+  //   },
+  //   {
+  //     "busNo": "XYZ456",
+  //     "boardingTime": "2:45 PM",
+  //     "gate": "05-X",
+  //     "seat": "7",
+  //     "passengerName": "Kamal Perera",
+  //     "from": "Galle",
+  //     "to": "Kandy",
+  //     "date": "15DEC",
+  //     "ticketNo": "987-123456789",
+  //   },
+  //   {
+  //     "busNo": "XYZ456",
+  //     "boardingTime": "2:45 PM",
+  //     "gate": "05-X",
+  //     "seat": "7",
+  //     "passengerName": "Kamal Perera",
+  //     "from": "Galle",
+  //     "to": "Kandy",
+  //     "date": "15DEC",
+  //     "ticketNo": "987-123456789",
+  //   },
+  // ];
+
+  final DatabaseReference Dbref =
+      FirebaseDatabase.instance.ref().child('TicketIssue');
+  List<Map<String, String>> tickets = [];
+
+  @override
+  void initState() {
+    super.initState();
+    fetchTickets();
+  }
+
+  void fetchTickets() async {
+    final snapshot = await Dbref.get();
+    if (snapshot.exists) {
+      List<Map<String, String>> fetchedTickets = [];
+      Map data = snapshot.value as Map;
+      data.forEach((key, value) {
+        fetchedTickets.add({
+          "busNo": value['Bus Number'] ?? "N/A",
+          "boardingTime": value['Departure Time'] ?? "N/A",
+          "gate": value["gate"] ?? "N/A",
+          "seat": value["seat"] ?? "N/A",
+          "passengerName": value['Passenger ID'] ?? "N/A",
+          "from": value['From'] ?? "N/A",
+          "to": value['To'] ?? "N/A",
+          "date": value['Date'] ?? "N/A",
+          "ticketNo": value["ticketNo"] ?? "N/A",
+        });
+      });
+      setState(() {
+        tickets = fetchedTickets;
+      });
+    } else {
+      print("No data available");
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -102,14 +139,14 @@ class TicketWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10),
+      padding: const EdgeInsets.only(left: 30, top: 25),
       child: ElevatedTicketWidget(
         height: 350,
-        width: 340,
+        width: 300,
         elevation: 1.5,
         backgroundColor: const Color.fromARGB(195, 255, 193, 7),
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(30.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
