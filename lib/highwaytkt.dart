@@ -2,53 +2,16 @@ import 'package:elevated_ticket_widget/elevated_ticket_widget.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 
-class Ongoingscreen extends StatefulWidget {
-  const Ongoingscreen({super.key});
+class HgwTktIssue extends StatefulWidget {
+  const HgwTktIssue({super.key});
 
   @override
-  State<Ongoingscreen> createState() => _ClosedtktState();
+  State<HgwTktIssue> createState() => _ClosedtktState();
 }
 
-class _ClosedtktState extends State<Ongoingscreen> {
-  // Sample Ticket Data List
-  // final List<Map<String, String>> tickets = [
-  //   {
-  //     "busNo": "ABC123",
-  //     "boardingTime": "11:30 AM",
-  //     "gate": "08-Hw",
-  //     "seat": "11",
-  //     "passengerName": "Induwara Dilhara",
-  //     "from": "Matara",
-  //     "to": "Colombo",
-  //     "date": "30NOV",
-  //     "ticketNo": "345-65647527457",
-  //   },
-  //   {
-  //     "busNo": "XYZ456",
-  //     "boardingTime": "2:45 PM",
-  //     "gate": "05-X",
-  //     "seat": "7",
-  //     "passengerName": "Kamal Perera",
-  //     "from": "Galle",
-  //     "to": "Kandy",
-  //     "date": "15DEC",
-  //     "ticketNo": "987-123456789",
-  //   },
-  //   {
-  //     "busNo": "XYZ456",
-  //     "boardingTime": "2:45 PM",
-  //     "gate": "05-X",
-  //     "seat": "7",
-  //     "passengerName": "Kamal Perera",
-  //     "from": "Galle",
-  //     "to": "Kandy",
-  //     "date": "15DEC",
-  //     "ticketNo": "987-123456789",
-  //   },
-  // ];
-
+class _ClosedtktState extends State<HgwTktIssue> {
   final DatabaseReference Dbref =
-      FirebaseDatabase.instance.ref().child('TicketIssue');
+      FirebaseDatabase.instance.ref().child('TicketIssue_Hgw');
   List<Map<String, String>> tickets = [];
 
   @override
@@ -63,7 +26,7 @@ class _ClosedtktState extends State<Ongoingscreen> {
       List<Map<String, String>> fetchedTickets = [];
       Map data = snapshot.value as Map;
       data.forEach((key, value) {
-        fetchedTickets.insert(0, {
+        fetchedTickets.insert(0,{
           "busNo": value['Bus Number'] ?? "N/A",
           "boardingTime": value['Departure Time'] ?? "N/A",
           "gate": value["gate"] ?? "-",
@@ -144,7 +107,7 @@ class TicketWidget extends StatelessWidget {
         height: 350,
         width: 300,
         elevation: 1.5,
-        backgroundColor: const Color.fromARGB(195, 255, 193, 7),
+        backgroundColor: const Color.fromARGB(195, 35, 158, 10),
         child: Padding(
           padding: const EdgeInsets.all(30.0),
           child: Column(
@@ -157,7 +120,7 @@ class TicketWidget extends StatelessWidget {
                     height: 80,
                     width: 80,
                     decoration: BoxDecoration(
-                      color: Colors.blue,
+                      color: const Color.fromARGB(255, 79, 172, 249),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: const Column(

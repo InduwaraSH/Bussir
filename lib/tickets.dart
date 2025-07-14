@@ -1,4 +1,5 @@
 import 'package:bussir/closedtkt.dart';
+import 'package:bussir/highwaytkt.dart';
 import 'package:bussir/ongoingscreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -46,12 +47,12 @@ class _SegmentedControlExampleState extends State<SegmentedControlExample> {
           children: const <Sky, Widget>{
             Sky.midnight: Padding(
               padding: EdgeInsets.symmetric(horizontal: 20),
-              child: Text('Ongoing',
+              child: Text('Normalway',
                   style: TextStyle(color: CupertinoColors.black)),
             ),
             Sky.viridian: Padding(
               padding: EdgeInsets.symmetric(horizontal: 20),
-              child: Text('Closed',
+              child: Text('Highway',
                   style: TextStyle(color: CupertinoColors.black)),
             ),
           },
@@ -66,7 +67,7 @@ class _SegmentedControlExampleState extends State<SegmentedControlExample> {
       case Sky.midnight:
         return const Ongoingscreen();
       case Sky.viridian:
-        return const Closedtkt();
+        return const HgwTktIssue();
       default:
         return const Center(child: Text('Select a segment'));
     }
