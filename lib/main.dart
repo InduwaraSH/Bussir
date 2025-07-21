@@ -1,4 +1,5 @@
 import 'package:bussir/alerts.dart';
+import 'package:bussir/firebase_options.dart';
 import 'package:bussir/home.dart';
 import 'package:bussir/route.dart';
 import 'package:bussir/tickets.dart';
@@ -10,7 +11,7 @@ import 'package:iconsax/iconsax.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
-  Firebase.initializeApp();
+  Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform,);
   runApp(const MyApp());
 }
 
