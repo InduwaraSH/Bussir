@@ -38,8 +38,6 @@ PODS:
     - GoogleUtilities/Logger
     - GoogleUtilities/Privacy
   - leveldb-library (1.22.6)
-  - qr_bar_code (0.0.1):
-    - Flutter
   - url_launcher_ios (0.0.1):
     - Flutter
 
@@ -47,7 +45,6 @@ DEPENDENCIES:
   - firebase_core (from `.symlinks/plugins/firebase_core/ios`)
   - firebase_database (from `.symlinks/plugins/firebase_database/ios`)
   - Flutter (from `Flutter`)
-  - qr_bar_code (from `.symlinks/plugins/qr_bar_code/ios`)
   - url_launcher_ios (from `.symlinks/plugins/url_launcher_ios/ios`)
 
 SPEC REPOS:
@@ -68,8 +65,6 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/firebase_database/ios"
   Flutter:
     :path: Flutter
-  qr_bar_code:
-    :path: ".symlinks/plugins/qr_bar_code/ios"
   url_launcher_ios:
     :path: ".symlinks/plugins/url_launcher_ios/ios"
 
@@ -85,7 +80,6 @@ SPEC CHECKSUMS:
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
   GoogleUtilities: 00c88b9a86066ef77f0da2fab05f65d7768ed8e1
   leveldb-library: cc8b8f8e013647a295ad3f8cd2ddf49a6f19be19
-  qr_bar_code: c6a9f7385ba43aaaa1bbc10cdea36da8c84c56d5
   url_launcher_ios: 694010445543906933d732453a59da0a173ae33d
 
 PODFILE CHECKSUM: a57f30d18f102dd3ce366b1d62a55ecbef2158e5

@@ -240,14 +240,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.8"
-  qr_bar_code:
-    dependency: "direct main"
-    description:
-      name: qr_bar_code
-      sha256: "9daec32b12dfac2a4199852ba9dbaa52edb05ad72f9f0e6f440459f297c23c4b"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.4.0"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -390,5 +382,5 @@ packages:
     source: hosted
     version: "1.1.1"
 sdks:
-  dart: ">=3.7.2 <4.0.0"
+  dart: ">=3.7.0-0 <4.0.0"
   flutter: ">=3.27.0"
